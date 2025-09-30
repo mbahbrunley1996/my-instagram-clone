@@ -15,6 +15,9 @@ import { CiHeart, CiMenuBurger, CiFaceSmile } from "react-icons/ci";
 import { BiMoviePlay } from "react-icons/bi";
 import { FiSend } from "react-icons/fi";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import ModeToggle from "../modeToggle/modeToggle";
+
+
 
 const NavbarComponent = () => {
   const stories = [
@@ -111,6 +114,7 @@ const NavbarComponent = () => {
                 Sign in
               </Link>
             </SignedOut>
+            <ModeToggle />
           </div>
         </div>
 
@@ -147,6 +151,17 @@ const NavbarComponent = () => {
               <a href="#" className="flex items-center gap-3 hover:text-blue-500">
                 <CiMenuBurger /> More
               </a>
+              <a href="#" className="flex items-center gap-3 hover:text-blue-500">
+                <ModeToggle size={20} /> ModeToggle
+              </a>
+              {/* <SignedIn>
+                <UserButton afterSignOutUrl="/" />
+              </SignedIn>
+              <SignedOut>
+                <Link href="/sign-in" className="text-blue-500 lg:hidden lg:block">
+                  Sign in
+                </Link>
+              </SignedOut> */}
             </nav>
           </div>
 
