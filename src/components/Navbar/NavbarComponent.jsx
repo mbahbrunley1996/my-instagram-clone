@@ -15,7 +15,8 @@ import { CiHeart, CiMenuBurger, CiFaceSmile } from "react-icons/ci";
 import { BiMoviePlay } from "react-icons/bi";
 import { FiSend } from "react-icons/fi";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import ModeToggle from "../modeToggle/modeToggle";
+import { ModeToggle } from "../modeToggle/modeToggle";
+
 
 
 
@@ -91,31 +92,29 @@ const NavbarComponent = () => {
 
   return (
     <>
-      <div className="bg-gray-50 min-h-screen flex flex-col">
+      <div className="bg-primary min-h-screen flex flex-col">
         {/* Mobile Top Nav */}
-        <div className="flex justify-between items-center px-4 py-3 border-b border-gray-200 lg:hidden sticky top-0 z-50 bg-white text-black">
+        <div className="flex flex-col justify-between items-center px-4 py-3 border-b border-gray-200 lg:hidden sticky top-0 z-50 text-black">
           <h1 className="text-xl font-bold">instagram</h1>
-          <div className="flex gap-4 text-xl text-gray-600">
-            <FaHome />
-            <FaSearch />
-            <FaCompass />
-            <BiMoviePlay />
-            <FaEnvelope />
-            <CiHeart />
-            <FaPlusSquare />
-            <FaUserCircle />
-            <CiMenuBurger />
-            {/* 👇 Clerk user button */}
-            <SignedIn>
-              <UserButton afterSignOutUrl="/" />
-            </SignedIn>
-            <SignedOut>
-              <Link href="/sign-in" className="text-blue-500">
-                Sign in
-              </Link>
-            </SignedOut>
-            <ModeToggle />
-          </div>
+          <div className="flex gap-4 text-xl text-gray-600 items-center">
+    <FaHome />
+    <FaSearch />
+    <FaCompass />
+    <BiMoviePlay />
+    <FaEnvelope />
+    <CiHeart />
+    <FaPlusSquare />
+    <FaUserCircle />
+    <CiMenuBurger />
+    <SignedIn>
+      <UserButton afterSignOutUrl="/" />
+    </SignedIn>
+    <SignedOut>
+      <Link href="/sign-in" className="text-blue-500">
+        Sign in
+      </Link>
+    </SignedOut>
+  </div>
         </div>
 
         {/* Main Layout */}
@@ -168,7 +167,7 @@ const NavbarComponent = () => {
           {/* Feed */}
           <div className="flex-1 max-w-2xl mx-auto w-full">
             {/* Stories */}
-            <div className="flex gap-4 p-4 border-b border-gray-200 overflow-x-auto bg-white text-gray-600">
+            <div className="flex gap-4 p-4 border-b border-gray-200 overflow-x-auto bg-primary text-gray-600">
               {stories.map((story, idx) => (
                 <div
                   key={idx}
@@ -188,7 +187,7 @@ const NavbarComponent = () => {
             {posts.map((post, idx) => (
               <div
                 key={idx}
-                className="border-b border-gray-200 bg-white text-gray-600"
+                className="border-b border-gray-200 bg-primary text-gray-600"
               >
                 <div className="flex items-center gap-3 p-4 text-gray-300">
                   <img
